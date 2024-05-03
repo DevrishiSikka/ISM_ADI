@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        h1 {
+            text-align: center;
+            font-weight: bold;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;
+        }
+        .column {
+            flex: 1;
+            padding: 20px;
+        }
+        .column img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Aditya Shopping Portal</h1>
+    <div class="container">
+        <div class="column">
+            <img src="/static/logo.png" alt="Aditya Shopping Portal Logo">
+        </div>
+        <div class="column">
+            {% if error %}
+                <p>{{ error }}</p>
+            {% endif %}
+            <form method="POST" action="/login">
+                <label for="username">Username:</label><br>
+                <input type="text" id="username" name="username"><br>
+                <label for="password">Password:</label><br>
+                <input type="password" id="password" name="password"><br><br>
+                <input type="submit" value="Login">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
